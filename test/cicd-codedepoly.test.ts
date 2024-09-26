@@ -1,3 +1,8 @@
+import { handler } from "../services/hello"
 
-test('SQS Queue Created', () => {
-});
+describe('Hello describe test suite', () => {
+    test('handler should return 200', async () => {
+        const result = await handler({}, {});
+        expect(result.statusCode).toEqual(200);
+    })
+})
